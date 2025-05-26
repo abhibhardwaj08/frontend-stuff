@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All-in-One Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Multi Calculator Hub</h1>
+    <div class="tabs">
+      <button class="tab-button active" onclick="openTab('basic')">Basic</button>
+      <button class="tab-button" onclick="openTab('scientific')">Scientific</button>
+      <button class="tab-button" onclick="openTab('gst')">GST</button>
+      <button class="tab-button" onclick="openTab('emi')">EMI</button>
+      <button class="tab-button" onclick="openTab('converter')">Converter</button>
+    </div>
+
+    <div id="basic" class="tab-content active">
+      <input type="text" id="basic-display" disabled />
+      <div class="buttons">
+        <button>7</button><button>8</button><button>9</button><button>/</button>
+        <button>4</button><button>5</button><button>6</button><button>*</button>
+        <button>1</button><button>2</button><button>3</button><button>-</button>
+        <button>0</button><button>.</button><button>=</button><button>+</button>
+      </div>
+    </div>
+
+    <div id="scientific" class="tab-content">
+      <input type="text" id="scientific-display" disabled />
+      <div class="buttons">
+        <button>sin</button><button>cos</button><button>tan</button><button>√</button>
+        <button>log</button><button>ln</button><button>^</button><button>π</button>
+        <button>(</button><button>)</button><button>AC</button><button>=</button>
+      </div>
+    </div>
+
+    <div id="gst" class="tab-content">
+      <label>Amount: <input type="number" id="gst-amount"></label>
+      <label>GST Rate (%): <input type="number" id="gst-rate"></label>
+      <div class="buttons">
+        <button>Add GST</button>
+        <button>Remove GST</button>
+      </div>
+      <div id="gst-result"></div>
+    </div>
+
+    <div id="emi" class="tab-content">
+      <label>Principal (₹): <input type="number" id="emi-principal"></label>
+      <label>Rate (% p.a): <input type="number" id="emi-rate"></label>
+      <label>Tenure (months): <input type="number" id="emi-tenure"></label>
+      <button>Calculate EMI</button>
+      <div id="emi-result"></div>
+    </div>
+
+    <div id="converter" class="tab-content">
+      <label>Value: <input type="number" id="conv-value"></label>
+      <select id="conv-type">
+        <option value="km-m">Kilometers to Meters</option>
+        <option value="kg-g">Kilograms to Grams</option>
+        <option value="c-f">Celsius to Fahrenheit</option>
+      </select>
+      <button>Convert</button>
+      <div id="conv-result"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
